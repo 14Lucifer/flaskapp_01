@@ -24,4 +24,4 @@ ENV FLASK_APP=app.py
 # Run the Flask app
 ENTRYPOINT [ "python" ]
 # --debug can be passed at the runtime as custom cmd.
-CMD ["${FLASK_APP}","8080"]
+CMD ["$FLASK_APP","8080"]
