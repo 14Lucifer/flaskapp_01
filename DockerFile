@@ -7,6 +7,8 @@ WORKDIR /app
 # Install the required dependencies
 RUN pip install flask==2.3.2
 RUN pip install pyyaml==6.0
+RUN mkdir /app/data
+RUN mkdir /app/config
 
 # Copy the Flask app code and other necessary files to the container
 COPY . .
@@ -16,5 +18,5 @@ COPY . .
 # EXPOSE 5000
 
 # Run the Flask app
-ENTRYPOINT [ "python","simple_web.py" ]
+ENTRYPOINT [ "python","app.py" ]
 CMD ["8080"]
