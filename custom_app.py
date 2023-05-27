@@ -33,7 +33,7 @@ def display_info():
             custom_tag = config_data.get('custom-tag', custom_tag)
     
     # List the files in the data directory
-    data_dir = os.path.join(app.root_path, 'Data')
+    data_dir = os.path.join(app.root_path, 'data')
     file_list = os.listdir(data_dir)
 
     return render_template('index.html', app_title=app_title ,
