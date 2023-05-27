@@ -18,6 +18,10 @@ COPY . .
 # Even without mentioning EXPOSE, can still expose container port at runtime using "docker run -p 5000:50000".
 # EXPOSE 5000
 
+# Set the environment variables for Flask
+ENV FLASK_APP=app.py
+
 # Run the Flask app
-ENTRYPOINT [ "python","app.py" ]
-CMD ["8080"]
+ENTRYPOINT [ "python" ]
+# --debug can be passed at the runtime as custom cmd.
+CMD ["${FLASK_APP}","8080"]

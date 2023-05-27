@@ -13,13 +13,17 @@ def display_info():
     app_title = "Custom App"
 
     # Setting default values for parameter if there is no config file.
-    app_name = 'Custom Default'
-    environment = 'Custom Default'
-    custom_tag = 'Custom Default'
-
+    app_name = 'Default'
+    environment = 'Default'
+    custom_tag = 'Default'
+    
     # Getting IP address and hostname of container
     ip_address = str(socket.gethostbyname(socket.gethostname()))
     hostname = socket.gethostname()
+
+    # Getting Env variable
+    user_name = os.environ.get('USER_NAME', 'Default User')
+    passwd = os.environ.get('USER_PASSWORD', 'Default Password')
 
     # Check if the app_config.yaml file exists
     config_file = os.path.join(app.root_path, 'config', 'app_config.yaml')
@@ -37,7 +41,8 @@ def display_info():
     file_list = os.listdir(data_dir)
 
     return render_template('index.html', app_title=app_title ,
-                           ip_address=ip_address, hostname=hostname, 
+                           ip_address=ip_address, hostname=hostname,
+                           user_name=user_name,passwd=passwd, 
                            custom_tag=custom_tag, app_name=app_name, 
                            environment=environment, file_list=file_list)
 

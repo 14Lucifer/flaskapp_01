@@ -5,11 +5,14 @@
 </head>
 <body>
     <h1>{{ app_title }}</h1>
-    <p><strong> Value from Config file.</strong></p>
+    <p><strong> Value from Config file</strong></p>
     <p>  - App name : {{ app_name }}</p>
     <p>  - Environment : {{ environment }}</p>
-    <p>  - Custom Tag : {{ custom_tag }}</p>
-    <p><strong> Value from Container runtime.</strong></p>
+    <p>  - Custom Tag : {{ custom_tag }}</p><br>
+    <p><strong> Value from Env variable</strong></p>
+    <p>  - User name : {{ user_name }}</p>
+    <p>  - Password : {{ passwd }}</p><br>
+    <p><strong> Value from Container runtime</strong></p>
     <p>  - IP address : {{ ip_address }}</p>
     <p>  - Host name : {{ hostname }}</p>
     <p>  - Data directory:</p>
