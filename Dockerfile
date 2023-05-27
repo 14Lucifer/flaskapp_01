@@ -9,6 +9,7 @@ RUN pip install flask==2.3.2
 RUN pip install pyyaml==6.0
 RUN mkdir /app/data
 RUN mkdir /app/config
+RUN mkdir /app/log
 
 # Copy the Flask app code and other necessary files to the container
 COPY . .
